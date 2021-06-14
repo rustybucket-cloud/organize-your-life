@@ -53,4 +53,5 @@ function deleteActivity(el) {
     let index = daySelected.indexOf(elValue);
     el.remove();
     activities[day].splice(index, 1);
+    activities.weekPlans(day);
 }
