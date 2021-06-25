@@ -55,3 +55,14 @@ function deleteActivity(el) {
     activities[day].splice(index, 1);
     activities.weekPlans(day);
 }
+document.querySelector("#to-do-selector").addEventListener("input", toDoList());
+function toDoList() {
+    let day = document.querySelector("#to-do-select").value;
+    activities[day].forEach(todo => {
+        let items = document.querySelector("#list");
+        let listItem = document.createTextNode(todo);
+        let li = document.createElement("li");
+        li.innerHTML = listItem;
+        items.appendChild(li);
+    });
+}
